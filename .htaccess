@@ -1,0 +1,14 @@
+#deny from all
+#allow from 124.107.175.191
+#allow from 203.160.175.202
+
+
+RewriteEngine On
+
+
+RewriteCond $1 !^(editor)
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
